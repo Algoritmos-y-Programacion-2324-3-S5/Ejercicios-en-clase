@@ -1,0 +1,47 @@
+def ejercicio1(number):
+    if number.isnumeric():
+        if number == number[::-1]:
+            print("El numero es palindromico")
+        else: 
+            print("El numero no es palindromico")
+    else:
+        print("No es un numero")
+
+def ejercicio2(word1, word2):
+    len1 = len(word1)
+    len2 = len(word2)
+    if len1 > len2:
+        maxLen = len1
+    else:
+        maxLen = len2
+           
+    result = ""
+    for i in range(maxLen):
+        if i < len(word1):
+            result += word1[i]
+        if i < len(word2):
+            result += word2[i]
+    return result
+
+def ejercicio3(matriz):
+    output = []
+    expected = [[7,4,1],[8,5,2],[9,6,3]]
+    for i,value in enumerate(matriz):
+        iteration_matrix = []
+        for j, number in enumerate(value):
+            iteration_matrix.append(matriz[j][i])
+        iteration_matrix.reverse()
+        output.append(iteration_matrix)
+
+    print("Expected")
+    print(expected)
+    print("Obtained")
+    print(output)
+
+def main():
+    matrix = [[1,2,3],[4,5,6],[7,8,9]]
+    #ejercicio1(input("Ingrese un numero:"))
+    #print(ejercicio2(input("Ingrese la primera palabra:"),input("Ingrese la segunda palabra:")))
+    ejercicio3(matrix)
+
+main()
